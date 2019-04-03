@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import "antd/dist/antd.css";
 
 import Counter from './Counter';
 

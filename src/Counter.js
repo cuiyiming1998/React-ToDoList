@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import store from './store';
-//2019.3.28
-//store 连接action和Reducer的一个对象
-//action是一个对象,描述state的变化
-//Reducer定义了如何响应action描述的state的变化,并发送到store
 
 export default class Counter extends Component {
     constructor(){
@@ -11,8 +7,7 @@ export default class Counter extends Component {
         this.state = {
             num:store.getState().counter
         }
-        // console.log(this.state);
-        store.subscribe(()=>{//改变就更新
+        store.subscribe(()=>{
             this.setState({
                 num:store.getState().counter
             })
@@ -21,18 +16,15 @@ export default class Counter extends Component {
     handleAdd = () =>{    //+
         let action = {type:'ADD',value:1}
         store.dispatch(action);
-        // console.log(store.getState());
     }
     handleDEC = () =>{    //—
         let action = {type:'DEC',value:1}
         store.dispatch(action);
-        // console.log(store.getState());
     }
-    handleOdd = () =>{    //incrementIfOdd
+    handleOdd = () =>{    
         if (store.getState().counter%2 !== 0) {
             let action = {type:'ADD',value:1}
             store.dispatch(action);
-            // console.log(store.getState());
         }
     }
     handleAsync = () =>{    //incrementAsync

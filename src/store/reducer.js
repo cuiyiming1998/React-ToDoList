@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-let counter=(state=0,action)=>{//纯函数 (state,action) state是新的 action返回
+let counter=(state=0,action)=>{
     switch(action.type){
         case 'ADD':
             return state + action.value;//原来的＋1
@@ -14,7 +14,7 @@ let counter=(state=0,action)=>{//纯函数 (state,action) state是新的 action�
 let initValue = {
     list:[1,2,3]
 }
-let todo=(state=initValue,action)=>{//纯函数 (state,action) state是新的 action返回
+let todo=(state=initValue,action)=>{
     switch(action.type){
         case 'add_item':
             let newState = JSON.parse(JSON.stringify(state))//方法1
